@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'SatyAlive';
-    src: url(../fonts/stay-alive-font/stayalive.otf);
+    src: url('../fonts/stay-alive-font/stayalive.otf');
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,17 +14,44 @@ body {
     background-image: url('../img/fundo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-
+    height: 100vh;
 }
 
-.flipbook{
-   width: 1000px;
-   height: 600; 
+.book-container {
+    height: 100vh; /* Garante que o container ocupe toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centralização vertical */
+    margin: 0;
+    padding: 0;
 }
 
-.flipbook .hard{
-    background: red !important;
+.flipbook {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.flipbook .hard {
+    background: #e63946;
     color: white;
     font-weight: bold;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipbook img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.flipbook small {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
 }
