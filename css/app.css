@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'SatyAlive';
+    src: url(../fonts/stay-alive-font/stayalive.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SatyAlive';
+}
+
 body {
-    background-image: url('../img/fundo.png');
+    background-image: url('../img/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.flipbook{
+   width: 1000px;
+   height: 600; 
+}
+
+.flipbook .hard{
+    background: red !important;
+    color: white;
+    font-weight: bold;
+    border: none;
 }
