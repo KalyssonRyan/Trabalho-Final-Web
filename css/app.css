@@ -11,10 +11,10 @@
 }
 
 body {
-    background-image: url('../img/fundo.jpg');
-    background-repeat: no-repeat;
+    background-image: url(../img/fundo.jpg);
+    background-repeat: unset;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .book-container {
