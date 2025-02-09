@@ -18,10 +18,10 @@ body {
 }
 
 .book-container {
-    height: 100vh; /* Garante que o container ocupe toda a altura da tela */
+    height: 100vh; 
     display: flex;
     justify-content: center;
-    align-items: center; /* Centralização vertical */
+    align-items: center; 
     margin: 0;
     padding: 0;
 }
