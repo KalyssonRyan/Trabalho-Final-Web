@@ -34,7 +34,7 @@ body {
 }
 
 .flipbook .hard {
-    background: white;
+    /* background: white; */
     color: white;
     font-weight: bold;
     border: none;
@@ -58,4 +58,10 @@ body {
 button.carousel-control-next, button.carousel-control-prev {
     height: 0;
     margin: auto;
+}
+
+.pagina {
+    background-image: url(../img/texture.jpg);
+    background-repeat: unset;
+    background-size: cover;
 }
