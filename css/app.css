@@ -11,10 +11,10 @@
 }
 
 body {
-    background-image: url('../img/fundo.jpg');
-    background-repeat: no-repeat;
+    background-image: url(../img/fundo.jpg);
+    background-repeat: unset;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .book-container {
@@ -27,14 +27,14 @@ body {
 }
 
 .flipbook {
-    width: 800px;
-    height: 500px;
-    border: 1px solid #ccc;
+    width: 500px;
+    height: 566px;
+    /* border: 1px solid #ccc; */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .flipbook .hard {
-    background: #e63946;
+    /* background: white; */
     color: white;
     font-weight: bold;
     border: none;
@@ -55,3 +55,21 @@ body {
     margin-top: 10px;
     color: #333;
 }
+
+.flipbook {
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6); /* Sombra ao redor do flipbook */
+    border-radius: 5px;
+}
+button.carousel-control-next, button.carousel-control-prev {
+    height: 0;
+    margin: auto;
+}
+
+.pagina {
+    background-image: url(../img/texture.jpg);
+    background-repeat: unset;
+    background-size: cover;
+}
+
+
+

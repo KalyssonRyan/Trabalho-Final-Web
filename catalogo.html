@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Catalog</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/jquery.ui.css">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
         <!-- Pagina 1 do mobile-->
         <div class="carousel-item active">
           <div class="bg-white" style="max-width: 500px;max-height: 500px;">
-            <img class="img-fluid" src="img/capa.jpg" alt="">
+            <img class="img-fluid" src="img/capa.png" alt="">
           </div>
         </div>
         <!-- Pagina 2 do mobile -->
@@ -102,39 +102,27 @@
       <div class="pagina hard"></div>
       <!-- Pagina 1 -->
       <div class="bg-white pagina">
-        <h1 class="text-black">Pagina 1</h1>
-
-        <div aria-checked="produto">
-          <p class="text-black nome" id="nomePistola">Pistola</p>
-          <img id="imgPistola" class="imagem" src="img/pistola.jpg" alt="">
-          <h1 id="precoPistola" class="preco">Valor: 200,00</h1>
-          <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adiconar ao Carrinho</button>
+        <div>
+            <h4>Revolvers</h4>
+            <h4>Pistols</h4>
+            <h4>Reapeaters</h4>
+            <h4>Rifles</h4>
+            <h4>Shotguns</h4>
+            <h4>Ammunition</h4>
+            <h4>Accessories</h4>
         </div>
-
       </div>
       <!-- Pagina 2 -->
       <div class="bg-white pagina">
-        
-        <div aria-checked="produto">
-          <p class="text-black nome" id="nomePistola">Lancaster</p>
-          <img id="imgPistola" class="imagem" src="img/lancaster.jpg" alt="">
-          <h1 id="precoPistola" class="preco">Valor: 800,00</h1>
-          <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adiconar ao Carrinho</button>
-        </div>
-
+        <h1 class="text-black">Pagina 2</h1>
+        <p class="text-black">Catalogo</p>
       </div>
       <div class="bg-white pagina">
         <h1 class="text-black">Pagina 3</h1>
         <p class="text-black">Catalogo</p>
       </div>
-
-      <div class="bg-white pagina">
-        <h1 class="text-black">Pagina </h1>
-        <p class="text-black">Catalogo</p>
-      </div>
     </div>
   </div>
-
 <!-- Offbar lista de compras -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
     <div class="offcanvas-header">
@@ -142,34 +130,20 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <h1>Suas compras</h1>
-      
-      <ul class="minhasCompras">
-
-      </ul>
-      <button class="btn btn-dark">COMPRAR</button>
+      Aqui vai a lista de compras
+  
     </div>
 
   <script src="js/jquery.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
   <script src="js/turn.js"></script>
   <script src="js/script.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/script.js"></script>
   <script>
     $(".flipbook").turn({
       width: 1000,
       height: 600,
-      autoCenter: true,
-      elevation: 50,
-      duration: 1000,
-      gradients: true,
-      pages: 10  // Detecta o número de páginas automaticamente
-			
-  });
-
-  
-
+      autoCenter: true
+    });
   </script>
 </body>
 
