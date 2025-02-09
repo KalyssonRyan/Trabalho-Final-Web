@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fs-3" href="#">11's Store</a>
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-white" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="book-container d-flex justify-content-center align-items-center">
+    <div class="flipbook">
+      <!-- Primeira pagina e a ultima tipo a capa -->
+      <div class="hard" style="background-color: beige;">
+        <h1 class="text-black">11's Store</h1>
+        <p class="text-black">Catalogo</p>
+      </div>
+      <div class="hard"></div>
+      <!-- Pagina 1 -->
+      <div>
+        <h1 class="text-black">Pagina 1</h1>
+        <p class="text-black">Catalogo</p>
+      </div>
+      <!-- Pagina 2 -->
+      <div>
+        <h1 class="text-black">Pagina 2</h1>
+        <p class="text-black">Catalogo</p>
+      </div>
+      <div>
+        <img src="images/img-2.png" alt="Arbok" />
+        <small> Arbok </small>
+      </div>
+      <div>
+        <img src="images/img-3.png" alt="Pikachu" />
+        <small> Pikachu </small>
+      </div>
+      <div>
+        <img src="images/img-4.png" alt="Mew" />
+        <small> Mew </small>
+      </div>
+      <div>
+        <img src="images/img-5.png" alt="Darkrai" />
+        <small> Darkrai </small>
+      </div>
+      <div class="hard"></div>
+      <div class="hard">Thank You <small>~ HankTheTank</small></div>
+    </div>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/turns.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+      $(".flipbook").turn({
+          width: 1000,
+          height: 600,
+          autoCenter: true
+      });
+  </script>
+</body>
+</html>
