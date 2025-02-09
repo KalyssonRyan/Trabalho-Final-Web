@@ -33,6 +33,13 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Sobre</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart2" viewBox="0 0 16 16">
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/> Carrinho 
+            </svg>
+            Carrinho
+          </a>
         </ul>
       </div>
     </div>
@@ -41,13 +48,13 @@
 
     <!-- Carrossel do Bootstrap -->
     <div id="carouselExample" class="carousel slide d-md-none" data-bs-interval="false">
-      <!-- Indicadores -->
+      <!-- Indicadores
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
           aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+      </div> -->
 
       <!-- Slides -->
       <div class="carousel-inner">
@@ -59,7 +66,7 @@
         </div>
         <!-- Pagina 2 do mobile -->
         <div class="carousel-item">
-          <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 400px;">
+          <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 406px;">
             pagina 2
           </div>
         </div>
@@ -123,6 +130,16 @@
       <div class="hard">Thank You <small>~ HankTheTank</small></div>
     </div>
   </div>
+<!-- Offbar lista de compras -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      Aqui vai a lista de compras
+  
+    </div>
 
   <script src="js/jquery.js"></script>
   <script src="js/turns.js"></script>
