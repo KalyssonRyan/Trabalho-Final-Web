@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Catalog</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/app.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Catalog</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand text-white fs-3" href="#">11's Store</a>
-      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-white" id="navbarTogglerDemo02">
@@ -33,7 +37,55 @@
       </div>
     </div>
   </nav>
-  <div class="book-container d-flex justify-content-center align-items-center">
+  <div class="container mt-5">
+
+    <!-- Carrossel do Bootstrap -->
+    <div id="carouselExample" class="carousel slide d-md-none" data-bs-interval="false">
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <!-- Pagina 1 do mobile-->
+        <div class="carousel-item active">
+          <div class="bg-white" style="max-width: 500px;max-height: 500px;">
+            <img class="img-fluid" src="img/capa.png" alt="">
+          </div>
+        </div>
+        <!-- Pagina 2 do mobile -->
+        <div class="carousel-item">
+          <div class="bg-white" style="width: 500px;height: 500px;">
+            Pagina 2
+          </div>
+        </div>
+        <!-- Pagina 3 do mobile -->
+        <div class="carousel-item">
+          <div class="bg-white" style="width: 500px;height: 500px;">
+            Pagina 3
+          </div>
+        </div>
+      </div>
+
+      <!-- Botões de navegação -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Flipbook pro desktop -->
+
+  <div class="book-container d-flex justify-content-center align-items-center d-none d-md-flex">
     <div class="flipbook">
       <!-- Primeira pagina e a ultima tipo a capa -->
       <div class="hard" style="background-color: beige;">
@@ -76,11 +128,12 @@
   <script src="js/script.js"></script>
   <script src="js/bootstrap.js"></script>
   <script>
-      $(".flipbook").turn({
-          width: 1000,
-          height: 600,
-          autoCenter: true
-      });
+    $(".flipbook").turn({
+      width: 1000,
+      height: 600,
+      autoCenter: true
+    });
   </script>
 </body>
+
 </html>
