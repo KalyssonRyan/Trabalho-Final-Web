@@ -55,6 +55,7 @@ body {
     margin-top: 10px;
     color: #333;
 }
-.single-page {
-    margin: 0 auto;
+button.carousel-control-next, button.carousel-control-prev {
+    height: 0;
+    margin: auto;
 }
