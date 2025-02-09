@@ -27,14 +27,14 @@ body {
 }
 
 .flipbook {
-    width: 800px;
-    height: 500px;
+    width: 500px;
+    height: 566px;
     /* border: 1px solid #ccc; */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .flipbook .hard {
-    background: #ae8e91;
+    background: white;
     color: white;
     font-weight: bold;
     border: none;
