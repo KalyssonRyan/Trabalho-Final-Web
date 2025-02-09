@@ -29,12 +29,12 @@ body {
 .flipbook {
     width: 800px;
     height: 500px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .flipbook .hard {
-    background: #e63946;
+    background: #ae8e91;
     color: white;
     font-weight: bold;
     border: none;
@@ -54,4 +54,7 @@ body {
     text-align: center;
     margin-top: 10px;
     color: #333;
+}
+.single-page {
+    margin: 0 auto;
 }
