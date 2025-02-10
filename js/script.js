@@ -55,7 +55,7 @@ function mostrarCarrinho() {
             <li style="margin-bottom: 10px;">
                 <img src="${produto.imagem}" alt="${produto.nome}" width="50" style="margin-right: 10px;"> </br>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}
-                <span class="id">${produto.id}</span>
+                <span class="id d-none">${produto.id}</span>
                 <button class="btn btn-dark" onclick="removerItem(this)">Remover item</button>
             </li>
         `;
