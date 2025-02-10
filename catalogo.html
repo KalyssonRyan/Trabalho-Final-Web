@@ -111,36 +111,79 @@
       <!-- Pagina 3 do mobile -->
       <div class="carousel-item ">
         <div class="bg-white" style="max-width: 500px;max-height: 500px;">
-          <div class="container">
-            <div class="row align-items-center">
-              <!-- Informações -->
-              <div class="col-md-8">
-                <h1 class="nome" id="nomePistola">Semi-Automatic Pistol</h1>
-                <p>This is strictly a high grade gun meant for solving situations in a rapid fire manner. Too much
-                  cannot be said for the shooting qualities of this wonderful pistol. Fire one round and you will see
-                  – the recoil of this fine weapon is a testament to its power.</p>
+          <div aria-checked="produto" class="pistola-vulkanic">
 
-                <!-- Valor e Botão lado a lado -->
-                <div class="d-flex align-items-center gap-3">
-                  <h1 id="precoPistola" class="preco mb-0">Valor: 537,00</h1>
-                  <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/schofield.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Schofield Revolver</h1>
+                  <p>Every man prefers a revolver or a companion that is STRICTLY FIRST CLASS IN EVERY RESPECT. While
+                    second or third class can often suffice in desperation or the dark of night, no truer model of
+                    revolver exists. If you vote something a nuisance, there is no better way to dispatch it</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 192,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <!-- Imagem -->
-              <div class="col-md-4">
-                <img id="imgPistola" class="imagem img-fluid" src="img/armas/pistola-semi.png" alt="Mauser Pistol">
-              </div>
             </div>
+
+
           </div>
+
         </div>
       </div>
       <!-- Pagina 4 do mobile -->
-      <div class="carousel-item">
+      <div class="carousel-item ">
         <div class="bg-white" style="max-width: 500px;max-height: 500px;">
-          <img class="" src="img/armas/Lemat Revolver.png" alt="">
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/repeater litchfield.png"
+                    alt="Lemat Revolver">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Litchfield Repeater</h1>
+                  <p>Imagine a rifle that you could spend hours lovingly cleaning on a Sunday afternoon, then load with
+                    cartridges and shoot all week long without having to reload. It is relief from this kind of worry
+                    that allows a man to put his mind to larger tasks like understanding the meaning of the universe</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 348,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
         </div>
       </div>
+      
     </div>
 
     <!-- Botões de navegação -->
@@ -612,7 +655,7 @@
           </ul>
           
         </div>
-
+        </div>
       <!-- Modal de confirmação -->
       <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacaoLabel"
         aria-hidden="true">
