@@ -15,13 +15,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  
+
   <link rel="stylesheet" href="css/jquery.ui.css">
   <link rel="stylesheet" href="css/app.css">
-  <title>Document</title>
+  <title>Home</title>
 </head>
 
-<body onload="mostrarCarrinho()">
+<body >
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand text-white fs-3" href="#">11's Store</a>
@@ -59,7 +59,6 @@
       </div>
     </div>
   </nav>
-  <!-- Carrossel do Bootstrap -->
 
   <div id="carouselExample" class="carousel slide d-md-none " data-bs-interval="false">
 
@@ -153,7 +152,6 @@
       <span class="visually-hidden">Próximo</span>
     </button>
   </div>
-  
 
   <div class="book-container d-flex justify-content-center align-items-center d-none d-md-flex">
     <div class="centralizar" style="margin-left: -18rem;">
@@ -590,29 +588,42 @@
           </div>
 
         </div>
+        <div class="hard" style="background-image: url(../img/texture.jpg);"></div>
 
-          <div class="hard" style="background-image: url(../img/texture.jpg);"></div>
-
-          <div class="hard" style="background-color: beige;">
-            <img class="img-fluid capa" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa2.png" alt="">
-          </div>
-          
-
+        <div class="hard" style="background-color: beige;">
+          <img class="img-fluid capa" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa2.png"
+            alt="">
+        </div>
       </div>
-
-
-
- <!-- Offcanvas com a lista de compras -->
- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-  <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-      <h1>Suas compras</h1>
-      <ul class="minhasCompras"></ul>
-  </div>
+  </div>    
 </div>
+
+
+      <!-- Offcanvas com a lista de compras -->
+      <!-- <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h1>Suas compras</h1>
+          <ul class="minhasCompras"></ul>
+        </div>
+      </div> -->
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h1>Suas compras</h1>
+    
+          <ul class="minhasCompras">
+    
+          </ul>
+          
+        </div>
 
       <!-- Modal de confirmação -->
       <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacaoLabel"
@@ -645,7 +656,6 @@
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript">
         $("#flipbook").turn({
           width: 1000,
@@ -654,7 +664,6 @@
           gradients: true,
           autoCenter: true
         });
-    
       </script>
 </body>
 
