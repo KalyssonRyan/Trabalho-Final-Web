@@ -60,7 +60,35 @@
     </div>
   </nav>
 
-  <div class="container vh-100 d-flex justify-content-center align-items-center text-center">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="#">
+          <img src="img/lancaster.jpg" class="d-md-block w-100 d-none" alt="...">
+          <img src="img/banner-sm.jpg" class="d-block w-100 d-md-none">
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="#">
+          <img src="img/pistola.jpg" class="d-md-block w-100 d-none">
+          <img src="img/banner2-sm.jpg" class="d-md-block w-100 d-md-none" alt="...">
+
+        </a>
+
+      </div>
+      
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="filter: invert(1);">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="filter: inver(1);"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container d-flex justify-content-center align-items-center text-center">
     <div class="p-5 rounded" style="background-color: #222; width: 600px;">
       <h1 class="text-white mb-4">Bem-vindo à 11's Store</h1>
       <p class="text-white">
@@ -72,7 +100,7 @@
 
   </div>
 
-  <div class="container vh-100 d-flex justify-content-center align-items-center ">
+  <div class="container d-flex justify-content-center align-items-center ">
     <div class="p-5 border border-dark rounded-3 pagina"
       style="background-color: #f8f9fa; width: 400px; text-align: center;">
       <h4 class="mb-4">Categorias</h4>
