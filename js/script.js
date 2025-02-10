@@ -111,91 +111,25 @@ function removerTextoTotalEBotao() {
 }
 
 function finalizarCompra() {
-    alert("Compra finalizada com sucesso!");
-    localStorage.removeItem('carrinho');  // Limpa o carrinho após finalizar a compra
-    mostrarCarrinho();  // Atualiza a interface
+    // Fecha o offcanvas e espera ele terminar de fechar
+    const offcanvasElement = document.getElementById('offcanvasNavbar');
+    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+    if (offcanvas) offcanvas.hide();  // Fecha o offcanvas
+
+    // Espera o offcanvas fechar completamente antes de exibir o modal
+    offcanvasElement.addEventListener('hidden.bs.offcanvas', function () {
+        // Exibe o modal de confirmação
+        const modal = new bootstrap.Modal(document.getElementById('modalConfirmacao'));
+        modal.show();
+
+        // Limpa o carrinho após mostrar o modal
+        localStorage.removeItem('carrinho');
+        mostrarCarrinho();  // Atualiza a interface
+    }, { once: true });  // Adiciona o evento apenas uma vez
 }
 
 
-function exibirTotalEBotao(totalPreco) {
-    let totalElement = document.querySelector('.total-compra');
-    if (!totalElement) {
-        // Cria o elemento para o total se ele ainda não existir
-        totalElement = document.createElement('p');
-        totalElement.classList.add('total-compra');
-        totalElement.style.fontWeight = 'bold';
-        document.querySelector('.offcanvas-body').appendChild(totalElement);
-    }
-    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
 
-    // Cria dinamicamente o botão "COMPRAR" se não existir ainda
-    if (!document.querySelector('.botao-comprar')) {
-        const botaoComprar = document.createElement('button');
-        botaoComprar.classList.add('btn', 'btn-dark', 'botao-comprar');
-        botaoComprar.innerText = 'COMPRAR';
-        botaoComprar.onclick = finalizarCompra;  // Define a função que será chamada ao clicar no botão
-        document.querySelector('.offcanvas-body').appendChild(botaoComprar);
-    }
-}
-
-function removerTextoTotalEBotao() {
-    const totalElement = document.querySelector('.total-compra');
-    const botaoComprar = document.querySelector('.botao-comprar');
-    if (totalElement) {
-        totalElement.remove();  // Remove o elemento de total, se existir
-    }
-    if (botaoComprar) {
-        botaoComprar.remove();  // Remove o botão "COMPRAR", se existir
-    }
-}
-
-function finalizarCompra() {
-    alert("Compra finalizada com sucesso!");
-    localStorage.removeItem('carrinho');  // Limpa o carrinho após finalizar a compra
-    mostrarCarrinho();  // Atualiza a interface
-}
-
-function exibirTotalCompra(totalPreco) {
-    let totalElement = document.querySelector('.total-compra');
-    if (!totalElement) {
-        // Cria o elemento para o total se ele ainda não existir
-        totalElement = document.createElement('p');
-        totalElement.classList.add('total-compra');
-        totalElement.style.fontWeight = 'bold';
-
-        // Coloca o total antes do botão COMPRAR
-        const botaoComprar = document.querySelector('.btn.btn-dark');
-        botaoComprar.parentNode.insertBefore(totalElement, botaoComprar);
-    }
-    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
-}
-
-function removerTextoTotal() {
-    const totalElement = document.querySelector('.total-compra');
-    if (totalElement) {
-        totalElement.remove();  // Remove o elemento de total, se existir
-    }
-}
-
-
-function exibirTotalCompra(totalPreco) {
-    let totalElement = document.querySelector('.total-compra');
-    if (!totalElement) {
-        // Cria o elemento para o total se ele ainda não existir
-        totalElement = document.createElement('p');
-        totalElement.classList.add('total-compra');
-        totalElement.style.fontWeight = 'bold';
-        document.querySelector('.offcanvas-body').appendChild(totalElement);
-    }
-    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
-}
-
-function removerTextoTotal() {
-    const totalElement = document.querySelector('.total-compra');
-    if (totalElement) {
-        totalElement.remove();  // Remove o elemento de total, se existir
-    }
-}
 
 
 function removerItem(botao) {
