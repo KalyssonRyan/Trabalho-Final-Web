@@ -15,8 +15,13 @@ function adicionarCarrinho(botao){
 
     console.log(`Nome: ${nome}, Preço: ${preco}, Imagem: ${imagem}`);
 
-    //Cria o objeto desse produto
+    let ultimoId = parseInt(localStorage.getItem('ultimoId')) || 0;
+    const novoId = ultimoId + 1;
+    localStorage.setItem('ultimoId', novoId);  // Atualiza o último ID no localStorage
+
+    // Cria o objeto do produto com o ID único
     const produto = {
+        id: novoId,
         nome: nome,
         preco: preco,
         imagem: imagem
@@ -50,6 +55,7 @@ function mostrarCarrinho() {
             <li style="margin-bottom: 10px;">
                 <img src="${produto.imagem}" alt="${produto.nome}" width="50" style="margin-right: 10px;"> </br>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}
+                <span class="id">${produto.id}</span>
                 <button class="btn btn-dark" onclick="removerItem(this)">Remover item</button>
             </li>
         `;
@@ -57,15 +63,16 @@ function mostrarCarrinho() {
     });
 }
 
-function removerItem(botao){
-    const item = botao.closest('li')
-    const nomeProduto = item.querySelector('strong').innerText
+function removerItem(botao) {
+    const item = botao.closest('li');
+    const id = parseInt(item.querySelector('span').innerText);  // Converte o ID para número
 
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    carrinho = carrinho.filter(produto => produto.nome !== nomeProduto)
+    // Filtra os produtos e mantém apenas os que não têm o ID selecionado
+    carrinho = carrinho.filter(produto => produto.id !== id);
 
-    localStorage.setItem('carrinho', JSON.stringify(carrinho))
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    mostrarCarrinho()
+    mostrarCarrinho();  // Atualiza a interface
 }

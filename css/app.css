@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'SatyAlive';
-    src: url('../fonts/stay-alive-font/stayalive.otf');
+    src: url('../fonts/fonts/stayalive.otf');
 }
 
 * {
@@ -24,6 +24,7 @@ body {
     align-items: center; 
     margin: 0;
     padding: 0;
+    margin-left: 13rem;
 }
 
 .flipbook {

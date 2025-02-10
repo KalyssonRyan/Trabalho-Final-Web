@@ -51,96 +51,29 @@
     </div>
   </nav>
 
-  <!-- Carrossel do Bootstrap -->
-  <div id="carouselExample" class="carousel slide d-md-none" data-bs-interval="false">
-    <!-- Indicadores
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
-
-    <!-- Slides -->
-    <div class="carousel-inner">
-      <!-- Pagina 1 do mobile-->
-      <div class="carousel-item active">
-        <div class="bg-white" style="max-width: 500px;max-height: 500px;">
-          <img class="img-fluid" src="img/capa.jpg" alt="">
+  <div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="row w-100">
+        <div class="col-md-6 mx-auto">
+            <h2 class="text-center mb-4">Entre em Contato</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="mensagem" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
         </div>
-      </div>
-      <!-- Pagina 2 do mobile -->
-      <div class="carousel-item">
-        <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 406px;">
-          pagina 2
-        </div>
-      </div>
-      <!-- Pagina 3 do mobile -->
-      <div class="carousel-item">
-        <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 400px;">
-          pagina 3
-          <a href="index.html">testando</a>
-        </div>
-      </div>
     </div>
-
-    <!-- Botões de navegação -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
-      <span class="visually-hidden">Próximo</span>
-    </button>
-  </div>
 </div>
 
-  <div class="book-container d-flex justify-content-center align-items-center d-none d-md-flex">
-    <div class="centralizar" style="margin-left: -18rem;">
-      <div id="flipbook">
-        <div class="hard" style="background-color: beige;">
-          <img class="img-fluid" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa.jpg" alt="">
-        </div>
-        <div class="pagina hard"></div>
-        <!-- Pagina 1 -->
-        <div class="bg-white pagina">
-          <h1 class="text-black">Pagina 1</h1>
-    
-          <div aria-checked="produto">
-            <p class="text-black nome" id="nomePistola">Pistola</p>
-            <img id="imgPistola" class="imagem img-fluid" src="img/pistola.jpg" alt="">
-            <h1 id="precoPistola" class="preco">Valor: 200,00</h1>
-            <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adiconar ao Carrinho</button>
-          </div>
-    
-        </div>
-        <!-- Pagina 2 -->
-        <div class="pagina">
-          
-          <div aria-checked="produto">
-            <p class="text-black nome" id="nomePistola">Lancaster</p>
-            <img id="imgPistola" class="imagem img-fluid" src="img/lancaster.jpg" alt="">
-            <h1 id="precoPistola" class="preco">Valor: 800,00</h1>
-            <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adiconar ao Carrinho</button>
-          </div>
-    
-        </div>
-        <div class="bg-white pagina">
-          <h1 class="text-black">Pagina 3</h1>
-          <p class="text-black">Catalogo</p>
-        </div>
-    
-        <div class="bg-white pagina">
-          <h1 class="text-black">Pagina </h1>
-          <p class="text-black">Catalogo</p>
-        </div>
-  
-  
-    
-  </div>
-    </div>
-      
 
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
