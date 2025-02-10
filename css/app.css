@@ -89,10 +89,16 @@ button.carousel-control-prev.botoes {
 }
 
 
-
+/* 
 .modal-backdrop {
     z-index: 1040 !important;
   }
   .modal {
     z-index: 1050 !important;
   }
+
+
+    .offcanvas {
+        z-index: 1055 !important;
+    }
+ */
