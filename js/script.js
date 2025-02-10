@@ -1,25 +1,20 @@
-function adicionarCarrinho(botao){
+function adicionarCarrinho(botao) {
     // Encontra o contêiner correto do produto usando closest()
     const produtoDiv = botao.closest('div[aria-checked="produto"]');
 
-    // Verifica se produtoDiv foi encontrado
     if (!produtoDiv) {
         console.error('Elemento pai do produto não encontrado.');
         return;
     }
 
-    //Procura dentro da variavel produtoDiv a classe correspondente .tanannan, e pega o valor dela
     const nome = produtoDiv.querySelector('.nome').innerText;
     const preco = produtoDiv.querySelector('.preco').innerText.replace('Valor: ', '').trim();
     const imagem = produtoDiv.querySelector('.imagem').src;
 
-    console.log(`Nome: ${nome}, Preço: ${preco}, Imagem: ${imagem}`);
-
     let ultimoId = parseInt(localStorage.getItem('ultimoId')) || 0;
     const novoId = ultimoId + 1;
-    localStorage.setItem('ultimoId', novoId);  // Atualiza o último ID no localStorage
+    localStorage.setItem('ultimoId', novoId);
 
-    // Cria o objeto do produto com o ID único
     const produto = {
         id: novoId,
         nome: nome,
@@ -27,15 +22,18 @@ function adicionarCarrinho(botao){
         imagem: imagem
     };
 
-    //Adiciona no localStorage
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-        carrinho.push(produto);
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    carrinho.push(produto);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-        mostrarCarrinho();
+    mostrarCarrinho();  // Atualiza a interface do carrinho
 
-        alert(`Produto "${nome}" adicionado ao carrinho!`);
+    // Exibe o Toast de confirmação
+    const toastEl = document.getElementById('toastAdicionado');
+    const toastBootstrap = new bootstrap.Toast(toastEl);
+    toastBootstrap.show();  // Exibe o Toast
 }
+
 
 function mostrarCarrinho() {
     const listaCompras = document.querySelector('.minhasCompras');
