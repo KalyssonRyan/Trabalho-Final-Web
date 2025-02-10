@@ -3,11 +3,15 @@
     src: url('../fonts/RDR\ Catalogue\ Bold\ Bold.ttf');
 }
 
-.index p{
+.index p, .texto-cima p, .contato p{
    font-size: 30px; 
 }
 
-.index li a{
+.index li a, .texto-cima li a, .contato li a{
+    font-size: 30px;
+}
+
+.contato label{
     font-size: 30px;
 }
 
