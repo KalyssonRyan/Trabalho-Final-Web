@@ -3,6 +3,14 @@
     src: url('../fonts/RDR\ Catalogue\ Bold\ Bold.ttf');
 }
 
+.index p{
+   font-size: 30px; 
+}
+
+.index li a{
+    font-size: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
