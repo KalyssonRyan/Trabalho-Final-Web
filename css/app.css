@@ -96,7 +96,7 @@ button.carousel-control-prev.botoes {
     width: 200px;
 }
 
-.modal-backdrop {
+/* .modal-backdrop {
     z-index: 1040 !important;
 }
 
@@ -112,4 +112,4 @@ button.carousel-control-prev.botoes {
     margin: auto;
     top: 50%;
     transform: translateY(-50%);
-}
+} */
