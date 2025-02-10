@@ -42,6 +42,8 @@ function mostrarCarrinho() {
     listaCompras.innerHTML = '';  // Limpa a lista antes de mostrar os itens
 
     let carrinho = [];
+    let totalPreco = 0;
+
     try {
         carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     } catch (e) {
@@ -49,8 +51,18 @@ function mostrarCarrinho() {
         carrinho = [];
     }
 
-    // Adiciona cada item do carrinho à lista
+    // Verifica se há itens no carrinho
+    if (carrinho.length === 0) {
+        const vazioHTML = `<p class="carrinho-vazio" style="font-weight: bold;">Carrinho está vazio</p>`;
+        listaCompras.innerHTML = vazioHTML;  // Mostra o texto "Carrinho está vazio"
+        removerTextoTotalEBotao();  // Remove o total e o botão se não houver itens
+        return;
+    }
+
+    // Adiciona cada item do carrinho à lista e calcula o total
     carrinho.forEach(produto => {
+        totalPreco += parseFloat(produto.preco.replace(',', '.'));
+
         const itemHTML = `
             <li style="margin-bottom: 10px;">
                 <img src="${produto.imagem}" alt="${produto.nome}" width="50" style="margin-right: 10px;"> </br>
@@ -61,7 +73,130 @@ function mostrarCarrinho() {
         `;
         listaCompras.innerHTML += itemHTML;
     });
+
+    // Mostra o total e o botão "COMPRAR"
+    exibirTotalEBotao(totalPreco);
 }
+
+function exibirTotalEBotao(totalPreco) {
+    let totalElement = document.querySelector('.total-compra');
+    if (!totalElement) {
+        // Cria o elemento para o total se ele ainda não existir
+        totalElement = document.createElement('p');
+        totalElement.classList.add('total-compra');
+        totalElement.style.fontWeight = 'bold';
+        document.querySelector('.offcanvas-body').appendChild(totalElement);
+    }
+    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
+
+    // Cria dinamicamente o botão "COMPRAR" se não existir ainda
+    if (!document.querySelector('.botao-comprar')) {
+        const botaoComprar = document.createElement('button');
+        botaoComprar.classList.add('btn', 'btn-dark', 'botao-comprar');
+        botaoComprar.innerText = 'COMPRAR';
+        botaoComprar.onclick = finalizarCompra;  // Define a função que será chamada ao clicar no botão
+        document.querySelector('.offcanvas-body').appendChild(botaoComprar);
+    }
+}
+
+function removerTextoTotalEBotao() {
+    const totalElement = document.querySelector('.total-compra');
+    const botaoComprar = document.querySelector('.botao-comprar');
+    if (totalElement) {
+        totalElement.remove();  // Remove o elemento de total, se existir
+    }
+    if (botaoComprar) {
+        botaoComprar.remove();  // Remove o botão "COMPRAR", se existir
+    }
+}
+
+function finalizarCompra() {
+    alert("Compra finalizada com sucesso!");
+    localStorage.removeItem('carrinho');  // Limpa o carrinho após finalizar a compra
+    mostrarCarrinho();  // Atualiza a interface
+}
+
+
+function exibirTotalEBotao(totalPreco) {
+    let totalElement = document.querySelector('.total-compra');
+    if (!totalElement) {
+        // Cria o elemento para o total se ele ainda não existir
+        totalElement = document.createElement('p');
+        totalElement.classList.add('total-compra');
+        totalElement.style.fontWeight = 'bold';
+        document.querySelector('.offcanvas-body').appendChild(totalElement);
+    }
+    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
+
+    // Cria dinamicamente o botão "COMPRAR" se não existir ainda
+    if (!document.querySelector('.botao-comprar')) {
+        const botaoComprar = document.createElement('button');
+        botaoComprar.classList.add('btn', 'btn-dark', 'botao-comprar');
+        botaoComprar.innerText = 'COMPRAR';
+        botaoComprar.onclick = finalizarCompra;  // Define a função que será chamada ao clicar no botão
+        document.querySelector('.offcanvas-body').appendChild(botaoComprar);
+    }
+}
+
+function removerTextoTotalEBotao() {
+    const totalElement = document.querySelector('.total-compra');
+    const botaoComprar = document.querySelector('.botao-comprar');
+    if (totalElement) {
+        totalElement.remove();  // Remove o elemento de total, se existir
+    }
+    if (botaoComprar) {
+        botaoComprar.remove();  // Remove o botão "COMPRAR", se existir
+    }
+}
+
+function finalizarCompra() {
+    alert("Compra finalizada com sucesso!");
+    localStorage.removeItem('carrinho');  // Limpa o carrinho após finalizar a compra
+    mostrarCarrinho();  // Atualiza a interface
+}
+
+function exibirTotalCompra(totalPreco) {
+    let totalElement = document.querySelector('.total-compra');
+    if (!totalElement) {
+        // Cria o elemento para o total se ele ainda não existir
+        totalElement = document.createElement('p');
+        totalElement.classList.add('total-compra');
+        totalElement.style.fontWeight = 'bold';
+
+        // Coloca o total antes do botão COMPRAR
+        const botaoComprar = document.querySelector('.btn.btn-dark');
+        botaoComprar.parentNode.insertBefore(totalElement, botaoComprar);
+    }
+    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
+}
+
+function removerTextoTotal() {
+    const totalElement = document.querySelector('.total-compra');
+    if (totalElement) {
+        totalElement.remove();  // Remove o elemento de total, se existir
+    }
+}
+
+
+function exibirTotalCompra(totalPreco) {
+    let totalElement = document.querySelector('.total-compra');
+    if (!totalElement) {
+        // Cria o elemento para o total se ele ainda não existir
+        totalElement = document.createElement('p');
+        totalElement.classList.add('total-compra');
+        totalElement.style.fontWeight = 'bold';
+        document.querySelector('.offcanvas-body').appendChild(totalElement);
+    }
+    totalElement.innerText = `Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`;
+}
+
+function removerTextoTotal() {
+    const totalElement = document.querySelector('.total-compra');
+    if (totalElement) {
+        totalElement.remove();  // Remove o elemento de total, se existir
+    }
+}
+
 
 function removerItem(botao) {
     const item = botao.closest('li');
