@@ -57,7 +57,7 @@ body {
 }
 
 .flipbook {
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6); /* Sombra ao redor do flipbook */
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6); 
     border-radius: 5px;
 }
 button.carousel-control-next, button.carousel-control-prev {
