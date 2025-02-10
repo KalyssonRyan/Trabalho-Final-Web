@@ -27,6 +27,10 @@ body {
     margin-left: 13rem;
 }
 
+.capa{
+    width: 500px;
+}
+
 .flipbook {
     width: 500px;
     height: 566px;
@@ -72,6 +76,10 @@ button.carousel-control-next.botao, button.carousel-control-prev botao {
     background-size: cover;
 }
 
+.pistola, .pistola-semi, .pistola-lemat, .pistola-vulkanic, .litchfield, .lancaster, .evans, .repeat, .semi, .muni1, .muni2{
+    padding: 20px;
+}
+
 button.carousel-control-prev.botoes {
     filter: invert(1);
 }
@@ -79,4 +87,6 @@ button.carousel-control-prev.botoes {
 .pagina img{
     width: 200px;
 }
+
+
 
