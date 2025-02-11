@@ -103,26 +103,14 @@ button.carousel-control-prev.botoes {
 a.nav-link.text-white:hover{
     color: rgb(237, 204, 54) !important;
 }
-/* .modal-backdrop {
-    z-index: 1040 !important;
-}
 
-.modal {
-    z-index: 1055 !important;
-}
-
-.offcanvas {
-    z-index: 1050 !important;
-}
-
-.modal-dialog {
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
-} */
 
 
 .mudar-tema{
-        background: white;
+        background: white !important;
         color: black !important;
+        
+}
+.mudar-tema-img{
+    filter: invert(1);
 }
