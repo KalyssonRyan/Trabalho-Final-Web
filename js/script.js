@@ -151,7 +151,7 @@ function toggleTheme() {
     const caixotas = document.querySelectorAll('.p-5.rounded');
     const h1 = document.querySelectorAll('h1');
     const p = document.querySelectorAll('p');
-    const svg = document.querySelectorAll('svg.bi.bi-cart2');
+    const img = document.querySelectorAll('icone');
     // Alterna a classe .mudar-tema em todos os elementos <nav>
     navElements.forEach(nav => {
         nav.classList.toggle('mudar-tema');
@@ -171,7 +171,7 @@ function toggleTheme() {
     p.forEach(link => {
         link.classList.toggle('mudar-tema');
     });
-    svg.forEach(link => {
+    img.forEach(link => {
         link.classList.toggle('mudar-tema-img');
     });
 }
