@@ -125,3 +125,17 @@ button.carousel-control-prev.botoes {
     top: 50%;
     transform: translateY(-50%);
 } */
+a.nav-link.text-white:hover{
+    color: rgb(237, 204, 54) !important;
+}
+
+
+
+.mudar-tema{
+        background: white !important;
+        color: black !important;
+        
+}
+.mudar-tema-img{
+    filter: invert(1);
+}
