@@ -1,17 +1,37 @@
 @font-face {
-    font-family: 'SatyAlive';
-    src: url('../fonts/stay-alive-font/stayalive.otf');
+    font-family: 'RedDead';
+    src: url('../fonts/RDR\ Catalogue\ Bold\ Bold.ttf');
+}
+
+.index p, .texto-cima p, .contato p, .sobre p{
+   font-size: 30px; 
+}
+
+.index li a, .texto-cima li a, .contato li a, .sobre li a{
+    font-size: 30px;
+}
+
+.contato button{
+    font-size: 30px;
+}
+
+.contato input, .contato textarea{
+    font-size: 20px;
+}
+
+.contato label{
+    font-size: 30px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'SatyAlive';
+    font-family: 'RedDead';
 }
 
 body {
-    background-image: url(../img/fundo.jpg);
+    background-image: url(../img/fundo2.jpg);
     background-repeat: unset;
     background-size: cover;
     /* height: 100vh; */
@@ -24,6 +44,11 @@ body {
     align-items: center; 
     margin: 0;
     padding: 0;
+    margin-left: 13rem;
+}
+
+.capa{
+    width: 500px;
 }
 
 .flipbook {
@@ -60,12 +85,16 @@ body {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6); 
     border-radius: 5px;
 }
-button.carousel-control-next, button.carousel-control-prev {
+button.carousel-control-next.botao, button.carousel-control-prev botao {
     height: 0;
     margin: auto;
 }
 
-.pagina {
+.onze{
+    font-size: 40px !important;
+}
+
+.pagina{
     background-image: url(../img/texture.jpg);
     background-repeat: unset;
     background-size: cover;
@@ -73,3 +102,49 @@ button.carousel-control-next, button.carousel-control-prev {
 
 
 
+.pistola, .pistola-semi, .pistola-lemat, .pistola-vulkanic, .litchfield, .lancaster, .evans, .repeat, .semi, .muni1, .muni2{
+    padding: 20px;
+}
+
+button.carousel-control-prev.botoes {
+    filter: invert(1);
+}
+
+.pagina img{
+    width: 200px;
+}
+
+/* .modal-backdrop {
+    z-index: 1040 !important;
+}
+
+.modal {
+    z-index: 1055 !important;
+}
+
+.offcanvas {
+    z-index: 1050 !important;
+}
+
+.modal-dialog {
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+a.nav-link.text-white:hover{
+    color: rgb(237, 204, 54) !important;
+}
+
+
+
+.mudar-tema{
+        background: white !important;
+        color: black !important;
+        
+}
+.mudar-tema-img{
+    filter: invert(0) !important;
+}
+.fundo{
+    background-image: url('../img/texture.jpg') !important;
+}

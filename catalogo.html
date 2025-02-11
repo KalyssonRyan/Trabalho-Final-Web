@@ -4,16 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Catalog</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/hash.js"></script>
+  <script type="text/javascript" src="js/turn.min.js"></script>
+  <script type="text/javascript" src="js/steve-jobs.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/jquery.ui.css">
   <link rel="stylesheet" href="css/app.css">
+  <title>Home</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg">
+<body class="catalogo" onload="mostrarCarrinho()">
+
+  <nav class="navbar navbar-expand-lg texto-cima">
     <div class="container-fluid">
-      <a class="navbar-brand text-white fs-3" href="#">11's Store</a>
+      <a class="navbar-brand text-danger onze" href="index.html">11's Store</a>
       <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -25,126 +37,773 @@
             <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="">Catálogo</a>
+            <a class="nav-link text-white" href="catalogo.html">Catálogo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Contato</a>
+            <a class="nav-link text-white" href="contato.html">Contato</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Sobre</a>
+            <a class="nav-link text-white" href="sobreNos.html">Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart2" viewBox="0 0 16 16">
-              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/> Carrinho 
-            </svg>
-            Carrinho
-          </a>
+            <a class="nav-link text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <img class="icone" src="img/cesta.png" alt="" style="width: 20px; height: 20px; filter: invert(1);">
+              Cestinha
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" onclick="toggleTheme()">Tema</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container mt-5">
 
-    <!-- Carrossel do Bootstrap -->
-    <div id="carouselExample" class="carousel slide d-md-none" data-bs-interval="false">
-      <!-- Indicadores
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div> -->
+  <div id="carouselExample" class="carousel slide d-md-none " data-bs-interval="false">
 
-      <!-- Slides -->
-      <div class="carousel-inner">
-        <!-- Pagina 1 do mobile-->
-        <div class="carousel-item active">
-          <div class="bg-white" style="max-width: 500px;max-height: 500px;">
-            <img class="img-fluid" src="img/capa.png" alt="">
-          </div>
-        </div>
-        <!-- Pagina 2 do mobile -->
-        <div class="carousel-item">
-          <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 406px;">
-            pagina 2
-          </div>
-        </div>
-        <!-- Pagina 3 do mobile -->
-        <div class="carousel-item">
-          <div class="bg-white" style="max-width: 500px;max-height: 500px;min-height: 400px;">
-            pagina 3
-            <a href="index.html">testando</a>
-          </div>
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <!-- Pagina 1 do mobile-->
+      <div class="carousel-item active">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <img class="img-fluid" src="img/capa2.png" alt="">
         </div>
       </div>
+      <!-- Pagina 2 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <div aria-checked="produto" class="pistola">
 
-      <!-- Botões de navegação -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/pistola.png" alt="Mauser Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Mauser Pistol</h1>
+                  <p>THE FINEST SELF LOADING “AUTOMATIC” PISTOL. It has the dandiest of designs, having originated from
+                    a couple of passionate brothers in Europe who have spent their life’s work fashioning ingenious ways
+                    to propel lead at high rates of speed.</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 600,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Pagina 3 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;" >
+          <div aria-checked="produto" class="pistola-vulkanic">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/schofield.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Schofield Revolver</h1>
+                  <p>Every man prefers a revolver or a companion that is STRICTLY FIRST CLASS IN EVERY RESPECT. While
+                    second or third class can often suffice in desperation or the dark of night, no truer model of
+                    revolver exists. If you vote something a nuisance, there is no better way to dispatch it</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 192,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Pagina 4 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/repeater litchfield.png"
+                    alt="Lemat Revolver">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Litchfield Repeater</h1>
+                  <p>Imagine a rifle that you could spend hours lovingly cleaning on a Sunday afternoon, then load with
+                    cartridges and shoot all week long without having to reload. It is relief from this kind of worry
+                    that allows a man to put his mind to larger tasks like understanding the meaning of the universe</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 348,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Pagina 5 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/auto-shotgun.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Semi-Auto Shotgun</h1>
+                  <p>UNSURPASSED PENETRATION AGAIN AND AGAIN. The Brun et Fabre Semi-Automatic Shotgun is the highest
+                    grade, the most perfect and best priced semi-auto shotgun made in the world. One of the most
+                    attractive fancy firearms on the market.</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 270,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Pagina 6 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/muni2.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Pistol Cartridges - High Velocity</h1>
+                  <p>Power. Speed. Accuracy. Honor your homestead by ordering a great number of these. The outer regions
+                    of this country are full of nefarious types who covet your wealth and would take it from you. Each
+                    box contains 30 cartridges.</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 01,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Pagina 7 do mobile -->
+      <div class="carousel-item ">
+        <div class="fundo" style="max-width: 500px;max-height: 500px;">
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/bandoleira1.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Higgins Bandolier</h1>
+                  <p>Looking for a tasteful way to display your violent capabilities? Look no further than the Higgins
+                    Bandolier, a classic design of thick cut leather with twin flap pouches.</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 229,50</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Flipbook pro desktop -->
+    <!-- Botões de navegação -->
+    <button class="carousel-control-prev botao" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next botao" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
 
   <div class="book-container d-flex justify-content-center align-items-center d-none d-md-flex">
-    <div class="flipbook">
-      <!-- Primeira pagina e a ultima tipo a capa -->
-      <div class="hard" style="background-color: beige;">
-        <img class="img-fluid" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa.jpg" alt="">
-      </div>
-      <div class="pagina hard"></div>
-      <!-- Pagina 1 -->
-      <div class="bg-white pagina">
-        <div>
-            <h4>Revolvers</h4>
-            <h4>Pistols</h4>
-            <h4>Reapeaters</h4>
-            <h4>Rifles</h4>
-            <h4>Shotguns</h4>
-            <h4>Ammunition</h4>
-            <h4>Accessories</h4>
+    <div class="centralizar" style="margin-left: -18rem;">
+      <div id="flipbook">
+        <div class="hard" style="background-color: beige;">
+          <img class="img-fluid capa" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa2.png"
+            alt="">
+        </div>
+
+        <!-- Pagina 1 -->
+        <div class="pagina pagina1">
+
+          <div aria-checked="produto" class="pistola">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Coluna da Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/pistola.png" alt="Mauser Pistol">
+                </div>
+
+                <!-- Coluna do texto e informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Mauser Pistol</h1>
+                  <p>THE FINEST SELF LOADING “AUTOMATIC” PISTOL. It has the dandiest of designs, having originated from
+                    a couple of passionate brothers in Europe who have spent their life’s work fashioning ingenious ways
+                    to propel lead at high rates of speed.</p>
+
+                  <!-- Linha para valor e botão, agora ajustada -->
+                  <div class="row">
+                    <div class="col-auto">
+                      <h1 id="precoPistola" class="preco">Valor: 600,00</h1>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div aria-checked="produto" class="pistola-semi">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Semi-Automatic Pistol</h1>
+                  <p>This is strictly a high grade gun meant for solving situations in a rapid fire manner. Too much
+                    cannot be said for the shooting qualities of this wonderful pistol. Fire one round and you will see
+                    – the recoil of this fine weapon is a testament to its power.</p>
+
+                  <!-- Valor e Botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 537,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/pistola-semi.png" alt="Mauser Pistol">
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <!-- Pagina 2 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="pistola-vulkanic">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/schofield.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Schofield Revolver</h1>
+                  <p>Every man prefers a revolver or a companion that is STRICTLY FIRST CLASS IN EVERY RESPECT. While
+                    second or third class can often suffice in desperation or the dark of night, no truer model of
+                    revolver exists. If you vote something a nuisance, there is no better way to dispatch it.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 192,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div aria-checked="produto" class="pistola-lemat">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Lemat Revolver</h1>
+                  <p>This unique revolver, with its second barrel for buck shot, is so strong and so perfect in
+                    manufacture, we have yet to record one that has become shaky or loose. Fire fifty thousand rounds
+                    with flawless accuracy and you will see. The Lemat Revolver is the short range winner.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 317,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/Lemat Revolver.png" alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FIM PISTOLAS -->
+
+        <!-- Pagina 3 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="litchfield">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Litchfield Repeater</h1>
+                  <p>Imagine a rifle that you could spend hours lovingly cleaning on a Sunday afternoon, then load with
+                    cartridges and shoot all week long without having to reload. It is relief from this kind of worry
+                    that allows a man to put his mind to larger tasks like understanding the meaning of the universe</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 348,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/repeater litchfield.png"
+                    alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div aria-checked="produto" class="lancaster">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/lancaster.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Lancaster Repeater</h1>
+                  <p>The gun that won both the West and South from ne’er-do-wells. We have received letters from
+                    thousands of satisfied purchasers who say that the superior firepower of the Lancaster is
+                    satisfactory in every way</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 243,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Pagina 4 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="evans">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/elepantRifle.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Elephant Rifle</h1>
+                  <p>The Elephant Gun Rifle from Mühlberg is a marvel of manufacturing and has been likened to holding a
+                    cannon. Fire it and see if you are still standing or able to hear anything other than ringing for
+                    several days.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 580,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div aria-checked="produto" class="carbine">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Carcano Rifle</h1>
+                  <p>RIFLE OF CHOICE FOR BOTH HOLY AND UNHOLY AMBITION. It has been said that discretion is the better
+                    part of valor, and no more valor is exhibited than that of a man hiding behind a rock and taking out
+                    his enemies when they least suspect it. You can find no better rifle than the Carcano Rifle.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 90,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/carcano.png" alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Pagina 5 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="semi">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/auto-shotgun.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Semi-Auto Shotgun</h1>
+                  <p>UNSURPASSED PENETRATION AGAIN AND AGAIN. The Brun et Fabre Semi-Automatic Shotgun is the highest
+                    grade, the most perfect and best priced semi-auto shotgun made in the world. One of the most
+                    attractive fancy firearms on the market.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 270,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div aria-checked="produto" class="repeat">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Repeating Shotgun</h1>
+                  <p>AN UNRIVALED MARVEL OF POWER. This Lancaster Repeating Shotgun is nationally recognized as the
+                    strongestshooter in the market. You will barely feel it in your hands until it goes off, and then,
+                    Lord Almighty, youwill say prayers to God first and Lancaster soon after. FIRE THIS GUN 10,000 TIMES
+                    AND SEE.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 217,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/repeat-shotgun.png" alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Pagina 6 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="muni1">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/muni2.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Pistol Cartridges - High Velocity</h1>
+                  <p>Power. Speed. Accuracy. Honor your homestead by ordering a great number of these. The outer regions
+                    of this country are full of nefarious types who covet your wealth and would take it from you. Each
+                    box contains 30 cartridges.</p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 01,00</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div aria-checked="produto" class="muni2">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Rifle Cartridges - High Velocity</h1>
+                  <p>Lethal at all distances. They leave little doubt or discussion when used as directed. Pin point
+                    accuracy. We have yet to receive complaint about these cartridges. Each box contains 30 cartridges.
+                  </p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 01,20</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/muni1.png" alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Pagina 7 -->
+        <div class="pagina">
+
+          <div aria-checked="produto" class="muni1">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/bandoleira1.png" alt="Volcanic Pistol">
+                </div>
+
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Higgins Bandolier</h1>
+                  <p>Looking for a tasteful way to display your violent capabilities? Look no further than the Higgins
+                    Bandolier, a classic design of thick cut leather with twin flap pouches. </p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 229,50</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div aria-checked="produto" class="muni2">
+
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Informações -->
+                <div class="col-md-8">
+                  <h1 class="nome" id="nomePistola">Higgins Bandolier</h1>
+                  <p>Looking for a tasteful way to display your violent capabilities? Look no further than the Higgins
+                    Bandolier, a classic design of thick cut leather with twin flap pouches. </p>
+
+                  <!-- Valor e botão lado a lado -->
+                  <div class="d-flex align-items-center gap-3">
+                    <h1 id="precoPistola" class="preco mb-0">Valor: 229,50</h1>
+                    <button class="btn btn-dark" onclick="adicionarCarrinho(this)">Adicionar ao Carrinho</button>
+                  </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-4">
+                  <img id="imgPistola" class="imagem img-fluid" src="img/armas/bandoleira2.png" alt="Lemat Revolver">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="hard" style="background-image: url(../img/texture.jpg);"></div>
+
+        <div class="hard" style="background-color: beige;">
+          <img class="img-fluid capa" style="min-width: 300px;max-width: 500px; height: 600px;" src="img/capa2.png"
+            alt="">
         </div>
       </div>
-      <!-- Pagina 2 -->
-      <div class="bg-white pagina">
-        <h1 class="text-black">Pagina 2</h1>
-        <p class="text-black">Catalogo</p>
-      </div>
-      <div class="bg-white pagina">
-        <h1 class="text-black">Pagina 3</h1>
-        <p class="text-black">Catalogo</p>
-      </div>
-    </div>
-  </div>
-<!-- Offbar lista de compras -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      Aqui vai a lista de compras
-  
-    </div>
+  </div>    
+</div>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/turn.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script>
-    $(".flipbook").turn({
-      width: 1000,
-      height: 600,
-      autoCenter: true
-    });
-  </script>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h1>Suas compras</h1>
+    
+          <ul class="minhasCompras">
+    
+          </ul>
+          
+        </div>
+        </div>
+      <!-- Modal de confirmação -->
+      <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacaoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalConfirmacaoLabel">Compra finalizada</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              Sua compra foi realizada com sucesso! Obrigado por comprar conosco.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast de confirmação -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+        <div id="toastAdicionado" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Produto adicionado!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
+          </div>
+          <div class="toast-body">
+            O produto foi adicionado ao carrinho com sucesso!
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        $("#flipbook").turn({
+          width: 1000,
+          height: 600,
+          elevation: 50,
+          gradients: true,
+          autoCenter: true
+        });
+      </script>
 </body>
 
 </html>
