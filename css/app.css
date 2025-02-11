@@ -141,3 +141,6 @@ a.nav-link.text-white:hover{
 .mudar-tema-img{
     filter: invert(1);
 }
+.fundo{
+    background-image: url('../img/texture.jpg') !important;
+}
