@@ -151,7 +151,7 @@ function toggleTheme() {
     const caixotas = document.querySelectorAll('.p-5.rounded');
     const h1 = document.querySelectorAll('h1');
     const p = document.querySelectorAll('p');
-    const img = document.querySelectorAll('icone');
+    const img = document.querySelectorAll('.icone');
     // Alterna a classe .mudar-tema em todos os elementos <nav>
     navElements.forEach(nav => {
         nav.classList.toggle('mudar-tema');
