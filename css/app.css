@@ -3,11 +3,11 @@
     src: url('../fonts/RDR\ Catalogue\ Bold\ Bold.ttf');
 }
 
-.index p, .texto-cima p, .contato p{
+.index p, .texto-cima p, .contato p, .sobre p{
    font-size: 30px; 
 }
 
-.index li a, .texto-cima li a, .contato li a{
+.index li a, .texto-cima li a, .contato li a, .sobre li a{
     font-size: 30px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 body {
-    background-image: url(../img/fundo.jpg);
+    background-image: url(../img/fundo2.jpg);
     background-repeat: unset;
     background-size: cover;
     /* height: 100vh; */
