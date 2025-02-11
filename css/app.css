@@ -90,11 +90,13 @@ button.carousel-control-next.botao, button.carousel-control-prev botao {
     margin: auto;
 }
 
-.pagina {
+.pagina{
     background-image: url(../img/texture.jpg);
     background-repeat: unset;
     background-size: cover;
 }
+
+
 
 .pistola, .pistola-semi, .pistola-lemat, .pistola-vulkanic, .litchfield, .lancaster, .evans, .repeat, .semi, .muni1, .muni2{
     padding: 20px;
