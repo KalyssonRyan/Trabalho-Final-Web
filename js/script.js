@@ -143,3 +143,19 @@ function removerItem(botao) {
 
     mostrarCarrinho();  // Atualiza a interface
 }
+
+function toggleTheme() {
+    // Seleciona todos os elementos <nav> e <a> da página
+    const navElements = document.querySelectorAll('nav');
+    const linkElements = document.querySelectorAll('a');
+
+    // Alterna a classe .mudar-tema em todos os elementos <nav>
+    navElements.forEach(nav => {
+        nav.classList.toggle('mudar-tema');
+    });
+
+    // Alterna a classe .mudar-tema em todos os links <a>
+    linkElements.forEach(link => {
+        link.classList.toggle('mudar-tema');
+    });
+}
