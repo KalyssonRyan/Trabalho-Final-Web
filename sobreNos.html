@@ -14,7 +14,7 @@
     <script src="js/script.js"></script>
   <title>Sobre Nós</title>
 </head>
-<body class="sobre">
+<body class="sobre" onload="mostrarCarrinho()">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -121,7 +121,51 @@
       </div>
     </div>
   </section>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title" id="offcanvasNavbarLabel">Carrinho de Compras</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <h1>Suas compras</h1>
 
+      <ul class="minhasCompras">
+
+      </ul>
+      
+    </div>
+    </div>
+  <!-- Modal de confirmação -->
+  <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacaoLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmacaoLabel">Compra finalizada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          Sua compra foi realizada com sucesso! Obrigado por comprar conosco.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de confirmação -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+    <div id="toastAdicionado" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Produto adicionado!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
+      </div>
+      <div class="toast-body">
+        O produto foi adicionado ao carrinho com sucesso!
+      </div>
+    </div>
+  </div>
   <!-- Rodapé -->
   <footer class="text-center text-white py-3">
     <p>&copy; 2025 11's Store. Todos os direitos reservados.</p>
